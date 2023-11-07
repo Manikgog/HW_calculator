@@ -2,8 +2,8 @@ package com.homework.calculator;
 
 public interface CalculatorService {
     String hello();
-    String plus(int number1, int number2);
-    String minus(int number1, int number2);
-    String multiply(int number1, int number2);
-    String divide(int number1, int number2);
+    String plus(Integer number1, Integer number2);
+    String minus(Integer number1, Integer number2);
+    String multiply(Integer number1, Integer number2);
+    String divide(Integer number1, Integer number2);
 }
