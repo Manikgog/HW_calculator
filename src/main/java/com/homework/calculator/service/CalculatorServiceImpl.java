@@ -15,24 +15,24 @@ public class CalculatorServiceImpl implements CalculatorService {
         return "Добро пожаловать в калькулятор";
     }
 
-    public String plus(Integer number1, Integer number2){
+    public Integer plus(Integer number1, Integer number2){
         checkService.checkNumbers(number1, number2);
-        return number1 + " + " + number2 + " = " + (number1 + number2);
+        return number1 + number2;
     }
 
-    public String minus(Integer number1, Integer number2){
+    public Integer minus(Integer number1, Integer number2){
         checkService.checkNumbers(number1, number2);
-        return number1 + " - " + number2 + " = " + (number1 - number2);
+        return number1 - number2;
     }
 
-    public String multiply(Integer number1, Integer number2){
+    public Integer multiply(Integer number1, Integer number2){
         checkService.checkNumbers(number1, number2);
-        return number1 + " * " + number2 + " = " + (number1 * number2);
+        return number1 * number2;
     }
 
-    public String divide(Integer number1, Integer number2){
+    public Integer divide(Integer number1, Integer number2){
         checkService.checkNumbers(number1, number2);
         checkService.checkingDivisionByZero(number2);
-        return number1 + " / " + number2 + " = " + (number1/number2);
+        return number1/number2;
     }
 }

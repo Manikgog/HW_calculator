@@ -1,12 +1,13 @@
 package com.homework.calculator.service;
 
+import com.homework.calculator.exceptions.DivisionByZeroException;
 import com.homework.calculator.exceptions.InputErrorException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class CalculatorServiceImplTest {
 
-    public final CalculatorService calculatorService;
+    private final CalculatorService calculatorService;
     private final CheckService checkService;
 
     public CalculatorServiceImplTest(){
@@ -17,8 +18,8 @@ public class CalculatorServiceImplTest {
 
     @Test
     public void minusTest(){
-        Assertions.assertEquals("5 - 3 = 2", calculatorService.minus(5, 3));
-        Assertions.assertEquals("5 - -3 = 8", calculatorService.minus(5, -3));
+        Assertions.assertEquals(2, calculatorService.minus(5, 3));
+        Assertions.assertEquals(8, calculatorService.minus(5, -3));
     }
 
     @Test
@@ -38,8 +39,8 @@ public class CalculatorServiceImplTest {
 
     @Test
     public void plusTest(){
-        Assertions.assertEquals("5 + -3 = 2", calculatorService.plus(5, -3));
-        Assertions.assertEquals("5 + 3 = 8", calculatorService.plus(5, 3));
+        Assertions.assertEquals(2, calculatorService.plus(5, -3));
+        Assertions.assertEquals(8, calculatorService.plus(5, 3));
     }
 
     @Test
@@ -59,8 +60,8 @@ public class CalculatorServiceImplTest {
 
     @Test
     public void multiplyTest(){
-        Assertions.assertEquals("5 * -3 = -15", calculatorService.multiply(5, -3));
-        Assertions.assertEquals("5 * 3 = 15", calculatorService.multiply(5, 3));
+        Assertions.assertEquals(-15, calculatorService.multiply(5, -3));
+        Assertions.assertEquals(15, calculatorService.multiply(5, 3));
     }
 
     @Test
@@ -80,13 +81,13 @@ public class CalculatorServiceImplTest {
 
     @Test
     public void divideTest(){
-        Assertions.assertEquals("15 / -3 = -5", calculatorService.divide(15, -3));
-        Assertions.assertEquals("15 / 3 = 5", calculatorService.divide(15, 3));
+        Assertions.assertEquals(-5, calculatorService.divide(15, -3));
+        Assertions.assertEquals(5, calculatorService.divide(15, 3));
     }
 
     @Test
     public void divideByZeroTest(){
-        Assertions.assertThrows(IllegalArgumentException.class, () -> calculatorService.divide(15, 0));
+        Assertions.assertThrows(DivisionByZeroException.class, () -> calculatorService.divide(15, 0));
     }
 
     @Test
