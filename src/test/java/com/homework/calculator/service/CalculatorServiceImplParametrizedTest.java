@@ -121,7 +121,7 @@ public class CalculatorServiceImplParametrizedTest {
                 Integer actualResult = calculatorService.divide(num1, num2);
                 Assertions.assertEquals(expectedResult, actualResult);
             }else{
-                Assertions.assertThrows(DivisionByZeroException.class, () -> calculatorService.divide(num1, null));
+                Assertions.assertThrows(DivisionByZeroException.class, () -> calculatorService.divide(num1, 0));
             }
         }
 
