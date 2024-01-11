@@ -1,4 +1,4 @@
-package com.homework.calculator;
+package com.homework.calculator.service;
 
 public interface CalculatorService {
     String hello();
